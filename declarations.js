@@ -6,22 +6,24 @@ const escapeStr = `Hello i\'m new to this Language
 
 
 
-const arr = [4, '2']
+const arr = [4, '2'];
+Object.freeze(arr)
 const obj = {
     str : "oumayma",
     num : 25,
     bool : true , 
     undef : undefined
-}
-Object.freeze(obj)
+};
+Object.freeze(obj);
 
 const nested = {
     arr : [4, undefined, '2'],
     obj : {
-        str : "oumayma",
-        num : 25,
-        bool : true 
+        str : obj.str,
+        num : obj.num,
+        bool : obj.bool
+    
     }
     
-}
-Object.freeze(nested)
+};
+Object.freeze(nested);
