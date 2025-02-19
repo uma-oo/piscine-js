@@ -26,4 +26,4 @@ const nested = {
     }
     
 };
-Object.freeze(nested);
+Object.freeze(nested , nested.obj);
