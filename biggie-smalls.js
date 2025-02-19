@@ -1,6 +1,6 @@
 
 
 
-var biggie = Number.MAX_VALUE;
-var smalls = Number.MIN_VALUE;
+var biggie = 1/0;
+var smalls = -1/0;
 
