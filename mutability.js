@@ -9,6 +9,5 @@ const clone2 = {
     country: person.country
 }
 const samePerson = person
-console.log(clone1===clone2)
 person.age+=1
 person.country='FR'
