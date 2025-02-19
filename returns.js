@@ -5,5 +5,8 @@ function id(number){
 }
 
 function getLength(argument){
-   return length(argument);
+   return  argument.length;
 }
+
+
+console.log(getLength([2, 42]))
