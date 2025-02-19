@@ -7,14 +7,20 @@ const escapeStr = `Hello i\'m new to this Language
 
 
 const arr = [4, '2'];
+
 Object.freeze(arr)
+
 const obj = {
     str : "oumayma",
     num : 25,
     bool : true , 
     undef : undefined
 };
+
 Object.freeze(obj);
+
+
+
 
 const nested={
     arr : [4, undefined, '2'],
@@ -26,4 +32,5 @@ const nested={
     }
     
 };
-Object.freeze(nested.obj, nested.arr, nested);
+
+Object.freeze(nested , nested.obj, nested.arr);
