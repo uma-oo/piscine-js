@@ -1,4 +1,5 @@
 const escapeStr = `Hello i\'m new to this Language 
+ \` escaped , \\ escaped, \/ escaped , \" escaped, \'
  "Please Go easy on me "
  "i'm just a little girl /:"
 `
