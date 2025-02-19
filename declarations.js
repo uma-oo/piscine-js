@@ -33,4 +33,7 @@ const nested={
     
 };
 
-Object.freeze(nested , nested.obj, nested.arr);
+Object.freeze(nested);
+Object.freeze(nested.arr)
+Object.freeze(nested.obj)
+nested.obj.str= [1]
