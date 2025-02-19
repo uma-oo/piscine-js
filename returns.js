@@ -10,6 +10,3 @@ function id(number){
 
 
 const getLength=(argument)=> argument.length
-
-
-console.log(getLength([2, 42]))
