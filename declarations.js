@@ -16,7 +16,7 @@ const obj = {
 };
 Object.freeze(obj);
 
-const nested = {
+const nested =Object.freeze({
     arr : [4, undefined, '2'],
     obj : {
         str : obj.str,
@@ -25,5 +25,5 @@ const nested = {
     
     }
     
-};
-Object.freeze(nested , nested.obj);
+});
+Object.freeze(nested.obj, nested.arr);
