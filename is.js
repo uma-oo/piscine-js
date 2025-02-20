@@ -1,13 +1,13 @@
 
 
 
-// is.num = (argument) => {
-//     return typeof (argument) === "number" ? true : false;
-// }
-
-function  num(argument){
+is.num = (argument) => {
     return typeof (argument) === "number" ? true : false;
 }
+
+// function  num(argument){
+//     return typeof (argument) === "number" ? true : false;
+// }
 
 function nan(argument) {
     return typeof (argument) === "number" && Number.isNaN(argument) ? true : false
@@ -55,7 +55,7 @@ function falsy(argument) {
 }
 
 
-is.num = num()
+
 is.nan = nan()
 is.str = str()
 is.bool= bool()
