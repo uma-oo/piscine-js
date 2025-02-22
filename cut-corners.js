@@ -1,6 +1,5 @@
 //helper functions 
 
-
 function multiply(a, b) {
     let result = 0
     let sign = 1
@@ -29,12 +28,15 @@ function multiply(a, b) {
 }
 function isNegativeZero(value) {
     value = +value; // cast to number
-    if(value) {
-       return false;
+    if (value) {
+        return false;
     }
     let infValue = 1 / value;
     return infValue < 0;
-  }
+}
+
+
+
 // integer division operator // hada f python ( z3ma division euclidienne ;)
 
 function divide(a, b) {
@@ -88,44 +90,31 @@ function ceil(number) {
     }
     let integer_part = divide(number, 1)
     let reminder = modulo(number, integer_part)
-    if (reminder>0) return integer_part + 1
-    else if (reminder < 0 && -(reminder) > 0.5) return integer_part - 1
-    else if (reminder===0) return integer_part
-    else if (reminder<0 && -reminder>0)  return integer_part 
+    if (reminder > 0) return integer_part + 1
+    else if (reminder < 0 && -(reminder) > 0) return integer_part
+    else if (reminder === 0) return integer_part
+    else if (reminder < 0 && -reminder > 0) return integer_part
 }
 
 
 function floor(number) {
     let integer_part = divide(number, 1)
-    let reminder= modulo(number,integer_part)
-    if (integer_part>=0 && reminder!==0) return integer_part
-    else if (reminder < 0 && -(reminder) > 0.5) return integer_part - 1
-    else if (integer_part<0  && reminder!==0) return integer_part-1
-    return integer_part 
-}
-
-function trunc(number) {
-    let integer_part= divide(number, 1)
     let reminder = modulo(number, integer_part)
-    if (reminder < 0 && -(reminder) > 0.5) return integer_part - 1
+    if (integer_part >= 0 && reminder !== 0) return integer_part
+    else if (reminder < 0 && -(reminder) > 0.5) return integer_part - 1
+    else if (integer_part < 0 && reminder !== 0) return integer_part - 1
     return integer_part
 }
 
-// nums=[3, -3, 2, -2.5, -0]
-
-// // console.log(nums.map(round))
-// // console.log(nums.map(floor))
-// console.log(nums.map(trunc))
-// console.log(nums.map(ceil))
-// // console.log("************************")
-
-// // console.log(nums.map(Math.round))
-// // console.log(nums.map(Math.floor))
-// // console.log(nums.map(Math.trunc))
-// // console.log(nums.map(Math.ceil))
+function trunc(number) {
+    let integer_part = divide(number, 1)
+    let reminder = modulo(number, integer_part)
+    if (reminder < 0 && -(reminder) > 0) return integer_part
+    return integer_part
+}
 
 
 
-// console.log(trunc(-2.5))
+
 
 
