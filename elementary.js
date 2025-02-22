@@ -1,22 +1,19 @@
 
 
 
-
 function multiply(a, b) {
-    result = 0
+    let result = 0
     for (let i = 1; i <= b; i++) {
         result += a
 
     }
     return result
-
 }
 
 // integer division operator // hada f python ( z3ma division euclidienne ;)
 
 function divide(a, b) {
-    result=0
-   
+    let result=0
     while(a-b>=0){
       result+=1
       a=a-b
@@ -31,6 +28,6 @@ function modulo(a, b) {
 
 
 console.log(multiply(5,3) )
-
 console.log(divide(15,5) )
 console.log(modulo(9,5) )
+console.log(multiply(34, 78))
