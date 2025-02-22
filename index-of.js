@@ -14,9 +14,9 @@ function indexOf(array , value, start=0){
 }
 
 
-function lastIndexOf(array , value, start=0){
+function lastIndexOf(array , value){
     let result=-1
-   for (let i=start; i<array.length; i++){
+   for (let i=0; i<array.length; i++){
         if (array[i]===value){
             result=i
         }
@@ -39,8 +39,8 @@ function includes(array , value, start=0){
 
 }
 
-console.log(indexOf(['ant', 'bison', 'camel', 'duck', 'bison'], 'bison', 2))
-console.log(lastIndexOf(['Dodo', 'Tiger', 'Penguin', 'Dodo'], "Dodo"))
+// console.log(indexOf(['ant', 'bison', 'camel', 'duck', 'bison'], 'bison', 2))
+// console.log(lastIndexOf(['Dodo', 'Tiger', 'Penguin', 'Dodo'], "Dodo"))
 
 console.log(lastIndexOf(['Dodo', 'Tiger', 'Penguin', 'Dodo'], "Tiger", 2))
-console.log(includes(['Dodo', 'Tiger', 'Penguin', 'Dodo'], "Tiger"))
+// console.log(includes(['Dodo', 'Tiger', 'Penguin', 'Dodo'], "Tiger"))
