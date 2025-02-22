@@ -19,6 +19,7 @@ function lastIndexOf(array , value, start=array.length){
    for (let i=start; i>=0; i--){
         if (array[i]===value){
             result=i
+            break
         }
         
    }
@@ -43,4 +44,5 @@ function includes(array , value, start=0){
 // console.log(lastIndexOf(['Dodo', 'Tiger', 'Penguin', 'Dodo'], "Dodo"))
 
 console.log(lastIndexOf(['Dodo', 'Tiger', 'Penguin', 'Dodo'], "Tiger", 2))
+console.log(lastIndexOf([1, 2, 3, 4, 5, 4, 3, 2, 1], 2))
 // console.log(includes(['Dodo', 'Tiger', 'Penguin', 'Dodo'], "Tiger"))
