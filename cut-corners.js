@@ -111,12 +111,12 @@ function trunc(number) {
     return integer_part
 }
 
-// nums=[3, -3, 2, -2, 0]
+nums=[3, -3, 2, -2.5, -0]
 
 // console.log(nums.map(round))
 // console.log(nums.map(floor))
-// console.log(nums.map(trunc))
-// console.log(nums.map(ceil))
+console.log(nums.map(trunc))
+console.log(nums.map(ceil))
 // console.log("************************")
 
 // console.log(nums.map(Math.round))
@@ -126,6 +126,6 @@ function trunc(number) {
 
 
 
-// console.log(trunc(-2))
+console.log(trunc(-2.5))
 
 
