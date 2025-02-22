@@ -13,10 +13,10 @@ function indexOf(array , value, start=0){
 
 }
 
-
-function lastIndexOf(array , value){
+// default value hyaaa tali mashi lbdya a oumayma lbghla 
+function lastIndexOf(array , value, start=array.length){
     let result=-1
-   for (let i=0; i<array.length; i++){
+   for (let i=start; i>=0; i--){
         if (array[i]===value){
             result=i
         }
