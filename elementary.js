@@ -2,7 +2,7 @@
 
 
 function multiply(a, b) {
-    let result = 0
+    let result=0
     let sign = 1
     if ((a < 0) && (b < 0)) {
         a = -(a)
@@ -45,7 +45,7 @@ function divide(a, b) {
         a = -(a)
         sign = -1
     }
-    while (a - b >= 0) {
+    while (a - b >= 0  && b!==0) {
         result += 1
         a = a - b
     }
