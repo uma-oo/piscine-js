@@ -26,6 +26,11 @@ function multiply(a, b) {
     }
 
 }
+
+
+
+
+
 function isNegativeZero(value) {
     value = +value; // cast to number
     if (value) {
@@ -107,13 +112,36 @@ function floor(number) {
 }
 
 function trunc(number) {
-    let integer_part = divide(number, 1)
+    const [integer , to_be_added]=optimize(number)
+    let integer_part = divide(integer, 1)
     let reminder = modulo(number, integer_part)
-    if (reminder < 0 && -(reminder) > 0) return integer_part
-    return integer_part
+    if (reminder < 0 && -(reminder) > 0) return integer_part+to_be_added
+    return integer_part+to_be_added
 }
 
+function optimize(number) {
+    let sign = 1
+    if (number < 0) {
+        number = -number
+        sign = -1
+    }
 
+    if (number >= 10000) {
+        let integer_part = 0
+        let to_be_added = 0
+        while (number >= 10000) {
+            to_be_added = to_be_added + 10000
+            integer_part = number - 10000
+            number = number - 10000
+        }
+        if (sign === 1) return [integer_part, to_be_added]
+        else return [-integer_part, -to_be_added]
+
+    } else {
+        if (sign === 1) return [number, 0]
+        else return [-number, 0]
+    }
+}
 
 
 
