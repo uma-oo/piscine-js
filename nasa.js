@@ -15,5 +15,3 @@ function nasa(N) {
     return new_str
 }
 
-
-console.log(nasa(6))
