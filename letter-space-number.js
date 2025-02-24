@@ -5,6 +5,12 @@
 
 
 
-function letterSpaceNumber(string){
- const re = /([a-z]){1}\s\d{1}\W/
+function letterSpaceNumber(str){
+ const re = /([a-zA-Z]\s{1}\d{1}(?=\s|$|[^a-z-A-Z-0-9]))/g
+ const myArray = str.match(re);
+ if (myArray===null) return []
+ return myArray
 }
+
+
+console.log(letterSpaceNumber('example 1, example 2'))
