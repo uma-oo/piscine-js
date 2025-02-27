@@ -6,7 +6,7 @@ function firstDayWeek(number, string) {
         let date_stable = new Date(after_number_of_weeks)
         let date = date_stable
         let day = date.getUTCDay()
-        let i= 0
+        let i=0
         while (day !== 1 && date.getUTCDate() !== 1) {
             date = new Date(year.setUTCDate(date_stable.getUTCDate() - i))
             day = date.getUTCDay()

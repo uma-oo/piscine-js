@@ -23,11 +23,7 @@ function isLeapYear(year) {
 
 
 
-console.log(new Date("0005-01-01"));
-
 function countLeapYears(date_object) {
-    console.log(new Date("0002-01-01"));
-    console.log(new Date("0002-01-01").getFullYear());
     let sum = 0
     for (let year = new Date("0001-01-01").getFullYear(); year < date_object.getFullYear(); year++) {
         if (isLeapYear(year) && year!==0) {
