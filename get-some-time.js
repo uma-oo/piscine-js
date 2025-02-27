@@ -1,5 +1,4 @@
 function firstDayWeek(number, string) {
-    const stable_year = new Date(string)
     const year = new Date(string)
     if (number >= 1 && number <= 53) {
         let after_number_of_weeks = year.setDate(year.getDate() + ((number - 1) * 7))
@@ -30,5 +29,9 @@ function format(date_object) {
 }
 
 
+
+
+
+console.log(firstDayWeek(3, '2020'));
 
 
