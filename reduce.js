@@ -1,6 +1,6 @@
 
 
-function fold(array_data, func, accumulator) {
+function fold(array_data, func, accumulator=array_data[0]) {
     for (let i = 0; i < array_data.length; i++) {
         accumulator = func(accumulator, array_data[i], i, array_data)
     }
@@ -9,7 +9,7 @@ function fold(array_data, func, accumulator) {
 
 
 
-function foldRight(array_data, func, accumulator) {
+function foldRight(array_data, func,  accumulator=array_data[array_data.length-1]) {
     for (let i = array_data.length - 1; i >= 0; i--) {
         accumulator = func(accumulator, array_data[i], i, array_data)
     }
@@ -28,7 +28,7 @@ function reduce(array_data, func, accumulator=array_data[0]) {
 
 }
 
-function reduceRight(array_data, func, accumulator=array_data[0]) {
+function reduceRight(array_data, func, accumulator=array_data[array_data.length-1]) {
     if (array_data.length < 1) {
         throw new Error("")
     } else {
