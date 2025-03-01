@@ -12,9 +12,6 @@ function filterStartVowel(array_string) {
 }
 
 
-
-
-
 function filter5Vowels(array_string) {
     return array_string.filter((value) => contains5vowels(value))
 }
@@ -27,8 +24,8 @@ function filter1DistinctVowel(array_string) {
 
 
 function multiFilter(data_object) {
-    let res = data_object.filter(char => char.region!=="South" && char.capital.length>=8 &&!startsWithVowel(char.name) && containsAtLeast1Vowel(char.tag))
-    return res
+    return data_object.filter(char => char.region!=="South" && char.capital.length>=8 &&!startsWithVowel(char.name) && containsAtLeast1Vowel(char.tag))
+
 }
 
 
