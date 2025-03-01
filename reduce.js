@@ -18,23 +18,25 @@ function foldRight(array_data, func, accumulator) {
 }
 
 
-function reduce(array_data, func, accumulator = 0) {
+function reduce(array_data, func, accumulator=array_data[0]) {
     if (array_data.length < 1) {
         throw new Error("")
     } else {
-        let res = fold(array_data, func, accumulator)
+        let res = fold(array_data.slice(1), func, accumulator)
         return res
     }
 
 }
 
-function reduceRight(array_data, func, accumulator=0) {
+function reduceRight(array_data, func, accumulator=array_data[0]) {
     if (array_data.length < 1) {
         throw new Error("")
     } else {
-        let res = foldRight(array_data, func, accumulator)
+        let res = foldRight(array_data.slice(1), func, accumulator)
         return res
     }
 }
+
+
 
 
