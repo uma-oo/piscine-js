@@ -14,7 +14,7 @@ export function build(number_of_bricks) {
             newDiv.setAttribute("data-foundation", true)
         }
         document.body.append(newDiv)
-    }, 20)
+    }, 100)
 }
 
 
