@@ -19,8 +19,6 @@ export function getClassical(){
 export function getActive(){
     let active_architects= document.querySelectorAll("a.classical.active")
     let non_active_classical_architects = document.querySelectorAll("a:not(.classical.active)")
-    console.log('active',active_architects);
-    console.log('non active',non_active_classical_architects);
     return [Array.from(active_architects), Array.from(non_active_classical_architects)]
 }
 
@@ -29,6 +27,5 @@ export function getBonannoPisano(){
     let BonannoPisano= document.getElementById("BonannoPisano")
     let array_of_other = Array.from(document.querySelectorAll("a.classical.active"))
     const res = array_of_other.filter((element)=>element!=BonannoPisano)
-    console.log("other_active", res);
     return [BonannoPisano, res]
 }
