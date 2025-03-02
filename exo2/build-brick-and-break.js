@@ -10,11 +10,11 @@ export function build(number_of_bricks) {
         }
         const newDiv = document.createElement("div")
         newDiv.setAttribute('id', `brick-${i}`)
-        if (i % 2 === 0) {
+        if ((i-2) % 3 === 0) {
             newDiv.setAttribute("data-foundation", true)
         }
         document.body.append(newDiv)
-    }, 20)
+    }, 100)
 }
 
 
