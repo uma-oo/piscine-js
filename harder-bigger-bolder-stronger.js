@@ -18,7 +18,7 @@ export function generateLetters(){
         div.style.fontSize=`${i+10}px`
         if (i<=40){
             div.style.fontWeight=300
-        } else if (i<=80){
+        } else if (i>= 41 && i<=80){
             div.style.fontWeight=400
         }else {
             div.style.fontWeight=600
