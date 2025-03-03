@@ -29,11 +29,11 @@ export function compose() {
         "x": "#F6EB61",
         "y": "#9ACD32",
         "z": "#7C7C7C",
-        "Space": "#FFFFFF",
+        " ": "#FFFFFF",
     }
 
 
-    console.log(new Set(colors))
+
 
     document.addEventListener("keydown", (event) => {
 
