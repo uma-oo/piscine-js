@@ -8,7 +8,7 @@ export function compose() {
         "c": "#00FFFF",
         "d": "#006400 ",
         "e": "#FFFF00",
-        "f": "#FF00FF",
+        "f": "#FF00FB",
         "g": "#008000",
         "h": "#FF69B4",
         "i": "#4B0082",
