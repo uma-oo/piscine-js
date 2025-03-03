@@ -15,7 +15,7 @@ export function generateLetters(){
         let index = random(0, alphabet.length-1)
         let div = document.createElement("div")
         div.innerText = alphabet[index]
-        div.style.fontSize=`${i+11}px`
+        div.style.fontSize=`${i+10}px`
         if (i<=40){
             div.style.fontWeight=300
         } else if (i<=80){
