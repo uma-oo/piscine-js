@@ -13,7 +13,6 @@ function pick(object, arr_or_arr_str) {
                 }
             }
         } else {
-
             if (arr_or_arr_str === key) {
                 new_object[key] = value
             }
@@ -27,13 +26,19 @@ function pick(object, arr_or_arr_str) {
 
 function omit(object, arr_or_arr_str) {
     let new_object = {}
+    let is_array = Array.isArray(arr_or_arr_str)
     for (let [key, value] of Object.entries(object)) {
-        for (let ele of arr_or_arr_str) {
-            if (ele !== key) {
+        if (is_array) {
+            for (let ele of arr_or_arr_str) {
+                if (ele !== key) {
+                    new_object[key] = value
+                }
+            }
+        } else {
+            if (arr_or_arr_str !== key) {
                 new_object[key] = value
             }
         }
-
     }
     return new_object
 }
@@ -63,4 +68,4 @@ function omit(object, arr_or_arr_str) {
 
 
 
-// console.log(pick(user.newUser, 'ageVerified'));
+// console.log(omit(user.tools, ['grinders', 'saws']));
