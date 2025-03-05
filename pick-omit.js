@@ -26,21 +26,15 @@ function pick(object, arr_or_arr_str) {
 
 function omit(object, arr_or_arr_str) {
     let new_object = {}
-    let is_array = Array.isArray(arr_or_arr_str)
+    let present = pick(object, arr_or_arr_str)
     for (let [key, value] of Object.entries(object)) {
-        if (is_array) {
-            for (let ele of arr_or_arr_str) {
-                if (ele !== key) {
-                    new_object[key] = value
-                }
-            }
-        } else {
-            if (arr_or_arr_str !== key) {
-                new_object[key] = value
-            }
+        if (!(key in present)) {
+            new_object[key] = value
         }
+
     }
     return new_object
+
 }
 
 
