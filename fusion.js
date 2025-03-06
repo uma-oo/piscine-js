@@ -11,6 +11,8 @@ function fusion(object1, object2) {
                     res = fusion(object1[key], object2[key]) 
                 }
                 new_object[key] = res
+            } else {
+                new_object[key]=object2[key]
             }
         } else {
             new_object[key] = value
@@ -51,6 +53,7 @@ function handleTypes(value1, value2) {
 
 
 
+console.log(fusion({ a: "hello", b: [] }, { a: 4 }));
 
 
 
