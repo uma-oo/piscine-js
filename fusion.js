@@ -6,7 +6,7 @@ function fusion(object1, object2) {
     for (let [key, value] of Object.entries(object1)) {
         if ((key in object2)) {
             if (checkType(object1[key], object2[key])) {
-                res = handleTypes(object1[key], object2[key])
+                let res = handleTypes(object1[key], object2[key])
                 if (res === "nested") {
                     res = fusion(object1[key], object2[key]) 
                 }
