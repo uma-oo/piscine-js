@@ -57,7 +57,7 @@ function cartTotal(object) {
  let new_object =  mapEntries (object, ([k, v])=>{
         let inner_obj = {}
         for (let [key, value] of Object.entries(nutritionDB[k])){
-         inner_obj[key]=Math.round((value*v*10)/100)/10
+         inner_obj[key]=Math.round((value*v*1000)/100)/1000
          
         }
         return [k, inner_obj]
