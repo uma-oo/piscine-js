@@ -28,7 +28,6 @@ function reduce(array_data, func, accumulator) {
         let res = fold(array_data.slice(1), func, accumulator)
         return res
     }
-
 }
 
 function reduceRight(array_data, func, accumulator) {
