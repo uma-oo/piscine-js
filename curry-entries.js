@@ -88,7 +88,7 @@ function reduceScore(object, initial_value) {
 }
 
 function filterForce(object) {
- return filterCurry( ([k, v])=> (v["shootingScore"]>=80  && v["isForceUser"]==true)) (object)
+ return filterCurry( ([, v])=> (v["shootingScore"]>=80  && v["isForceUser"]==true)) (object)
 }
 
 // mapAverage: that will return a new object with the property averageScore, that is the average of the scores for each person.
