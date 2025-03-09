@@ -12,8 +12,8 @@ function debounce(func, delay) {
 
 function opDebounce(func, delay, options = { leading: false, trailing: true }) {
     let timeout;
-    let leading_invoked = false
     return function (...args) {
+        let leading_invoked = false
 
         if(!timeout && !leading_invoked && options.leading) {
           func(...args)
