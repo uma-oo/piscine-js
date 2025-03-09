@@ -2,13 +2,98 @@
 
 
 function throttle(func, delay) {
-    let last_execution = 0
+    let run = 0
     return function (...args) {
-        let now = Date.now()
-        if (now - last_execution >= delay) {
+        if (run == 0) {
+            run = 1
             func(...args)
-            last_execution = now
+            setTimeout(() => {
+                run = 0;
+            }, delay)
+        } else { }
+    }
+}
+
+function opThrottle(func, delay, options = {}) {
+    let run = 0
+    let leading_invoked = false
+    let trealing_invoked = false
+    return function (...args) {
+        if (options.leading ) {
+            if (run == 0) {
+                func(...args)
+                run = 1
+                setTimeout(() => {
+                    run = 0;
+                }, delay)
+            } else { return }
+        } else if (!options.leading && options.trailing) {
+            if (run == 0) {
+                setTimeout(() => {
+                    run = 0;
+                }, delay)
+                if (!trealing_invoked) {
+                    trealing_invoked = true
+                } else {
+                    func(...args)
+                }
+                run = 1
+            } else { return }
         }
     }
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function opThrottle(func, delay, options = { leading: true, trealing: true }) {
+//     let run =0
+//      return function (...args) {
+//          switch (options) {
+//              case (options.leading && options.trealing):
+//                  throttle(func(args), delay)
+//                  break;
+//              case (!options.leading && options.trealing):
+//                  if (run === 0) {
+//                      setTimeout(() => {
+//                          run = 1
+//                      }, delay)
+//                      func(...args)
+//                  } else { return }
+//                  break;
+//              case (options.leading && !options.trealing):
+//                  func(...args)
+//                  return
+//              case (!options.leading && !options.trealing):
+//                  break;
+//          }
+//      }
+//  }
