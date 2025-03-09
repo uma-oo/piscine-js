@@ -10,15 +10,24 @@ function debounce(func, delay) {
 }
 
 
-function opDebounce(func , delay, options= { leading : false, maxWait:0, trailing:true }){
-    switch (options){
-     case options.leading && !options.trailing:
-        break
-     case options.trailing && !options.leading:
-        debounce(func, delay)
-     case options.leading && options.trailing:
-        break 
+function opDebounce(func, delay, options = { leading: false, trailing: true }) {
+    let timeout;
+    let leading_invoked = false
+    return function (...args) {
+
+        if(!timeout && !leading_invoked && options.leading) {
+          func(...args)
+          leading_invoked = true
+        }
+        if (leading_invoked && options.trailing){
+            clearTimeout(timeout)
+            timeout = setTimeout(() => {
+                func(...args)
+            }, delay)
+        } 
+
     }
+
 }
 
 
