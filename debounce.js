@@ -9,26 +9,26 @@ function debounce(func, delay) {
     }
 }
 
-
-function opDebounce(func, delay, options = { leading: false, trailing: true }) {
+function opDebounce(func, delay, options = { leading: false }) {
     let timeout;
     let leading_invoked = false
-    const context = this
     return function (...args) {
+        if (timeout){
+           clearTimeout(timeout)
+        }
         if (!timeout && !leading_invoked && options.leading) {
-            func.apply(context, ...args)
+            func(...args)
             leading_invoked = true
         }
-        if ((leading_invoked || !options.leading) && options.trailing) {
-            clearTimeout(timeout)
+        if ((leading_invoked || !options.leading)) {
             timeout = setTimeout(() => {
-                func.apply(context, ...args)
+                func(...args)
             }, delay)
         }
-
     }
 
 }
+
 
 
 
