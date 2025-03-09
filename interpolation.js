@@ -1,0 +1,8 @@
+
+
+
+function interpolation(object){
+
+
+
+}

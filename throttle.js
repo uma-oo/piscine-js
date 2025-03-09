@@ -16,7 +16,6 @@ function throttle(func, delay) {
 
 function opThrottle(func, delay, options = {}) {
     let run = 0
-    let leading_invoked = false
     let trealing_invoked = false
     return function (...args) {
         if (options.leading ) {
