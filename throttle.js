@@ -14,11 +14,15 @@ function throttle(func, delay) {
     }
 }
 
+
+
+// to work on it more than this !!!!
+//  really not a simple implementation 
 function opThrottle(func, delay, options = {}) {
     let run = 0
     let trealing_invoked = false
     return function (...args) {
-        if (options.leading ) {
+        if (options.leading) {
             if (run == 0) {
                 func(...args)
                 run = 1
@@ -36,6 +40,7 @@ function opThrottle(func, delay, options = {}) {
                 } else {
                     func(...args)
                 }
+
                 run = 1
             } else { return }
         }
