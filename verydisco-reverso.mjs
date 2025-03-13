@@ -10,7 +10,7 @@ function convert(sentence) {
 
     for (let i in words) {
         let word = words[i]
-        let median = Math.ceil((word.length) / 2)
+        let median = Math.floor((word.length) / 2)
         new_sentence += word.slice(median) + word.slice(0, median)
         if (i != words.length - 1) new_sentence += ` `
     }
@@ -18,10 +18,10 @@ function convert(sentence) {
 }
 
 
+
 const data_read = await readFile(filename, "utf-8", (err, data) => {
     if (err) return err
-    return convert(data)
-
+    return data
 })
 
-console.log(data_read);
+console.log(convert(data_read));
