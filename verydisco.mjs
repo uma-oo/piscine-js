@@ -19,7 +19,6 @@ for (let word of words) {
     } else {
         new_sentence += `${rest}${first}${left} `
     }
-
 }
 
 console.log(new_sentence);
