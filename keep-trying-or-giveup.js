@@ -3,11 +3,16 @@
 
 function retry(count, callback) {
     return async function (...args) {
-    for ( let i = 0 ; i<=count; i++){
-        return callback(...args).then(
-            (result)=>result
-        ).catch(err => err)
-     }
+        for (let i = 0; i <= count; i++) {
+            let res = callback(...args).then(
+                (result) => { console.log("result",result);   return  result}
+            )
+            if (res){ return res}
+            else if (!res && count===i){
+                console.log("hnaaaa");
+               throw res
+            }
+        }
     }
 }
 
